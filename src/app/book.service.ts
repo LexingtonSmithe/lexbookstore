@@ -26,4 +26,12 @@ export class BookService {
     return this._http.post('/api/books', JSON.stringify(book), options)
     .pipe(map(result => this.result = result.json()));
   }
+
+  updateBook(book: Book) {
+    let headers = new Headers({'Content-Type': 'application/json'});
+    let options = new RequestOptions({ headers: headers });
+
+    return this._http.post('/api/books/' + book._id, JSON.stringify(book), options)
+    .pipe(map(result => this.result = result.json()));
+  }
 }

@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { DetailsComponent } from './details/details.component';
 import { LengthPipe } from './length.pipe';
 import { AddBookComponent } from './addbook/addbook.component';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AddBookComponent } from './addbook/addbook.component';
     HomeComponent,
     DetailsComponent,
     LengthPipe,
-    AddBookComponent
+    AddBookComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
