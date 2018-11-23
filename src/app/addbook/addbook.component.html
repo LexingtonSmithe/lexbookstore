@@ -1,0 +1,53 @@
+<div class="body-blur">
+
+  <div class="row columns">
+    <h1>Add A Book</h1>
+  </div>
+
+  <form [formGroup]="bookForm" (ngSubmit)="newBook(bookForm.value)">
+
+    <div class="row">
+      <div class="columns small-12 medium-6 large-3">
+        <label>Title
+          <input type="text" name="title" [formControl]="bookForm.controls['title']">
+        </label>
+        <div class="alert" >You must include the Title.</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="columns small-12 medium-6 large-3">
+        <label>Author
+          <input type="text" name="author" [formControl]="bookForm.controls['author']">
+        </label>
+        <div class="alert" >You must include the Author.</div>
+      </div>
+      <div class="columns small-12 medium-6 large-3">
+        <label>Url
+          <input type="text" name="url" [formControl]="bookForm.controls['url']">
+        </label>
+        <div class="alert" >Provide a link such as Wikipedia...</div>
+      </div>
+      <div class="columns small-12 medium-6 large-3">
+        <label>Genre
+          <input type="text" name="genre" [formControl]="bookForm.controls['genre']">
+        </label>
+        <div class="alert" >You must specify a Genre..</div>
+      </div>
+      <div class="columns small-12 medium-6 large-3">
+        <label>Year Of Publication
+          <input type="text" name="yearPublished" [formControl]="bookForm.controls['yearPublished']">
+        </label>
+        <div class="alert" >You must include the year published.</div>
+      </div>
+    </div>
+
+      <div class="row columns">
+        <label>Description
+          <textarea name="description" id="description" [formControl]="bookForm.controls['description']"></textarea>
+        </label>
+        <div class="alert" >You must provide a synopsis or description.</div>
+        <input type="submit" class="cta-btn filled" value="Submit" [disabled]="!bookForm.valid">
+      </div>
+
+  </form>
+</div>
