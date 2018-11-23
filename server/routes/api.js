@@ -72,7 +72,7 @@ router.post('/books/:id', function(req, res){
   newBook.genre = req.body.genre;
   newBook.yearPublished = req.body.yearPublished;
   newBook.description = req.body.description;
-  newBook.save(function(err, addedBook) {
+  newBook.upsert(function(err, addedBook) {
     if(err){
       console.log('Error adding the book');
       console.log(err);
