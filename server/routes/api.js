@@ -43,7 +43,7 @@ router.get('/details/:id', function(req, res){
 });
 
 router.post('/books', function(req, res){
-  console.log('Adding a Book');
+  console.log('Adding a Book: ' + req.body.title);
   var newBook = new book();
   newBook.title = req.body.title;
   newBook.author = req.body.author;
@@ -61,23 +61,24 @@ router.post('/books', function(req, res){
 });
 
 router.post('/books/:id', function(req, res){
-  console.log('Updating a Book entry');
+  console.log('Updating a Book entry: ' + req.body.title);
   var newBook = new book();
   newBook._id = req.params.id;
-  console.log(newBook._id);
-  console.log(req.params.id);
+  //console.log(newBook._id);
+  //console.log(req.params.id);
   newBook.title = req.body.title;
   newBook.author = req.body.author;
   newBook.url = req.body.url;
   newBook.genre = req.body.genre;
   newBook.yearPublished = req.body.yearPublished;
   newBook.description = req.body.description;
-  newBook.upsert(function(err, addedBook) {
+  var options = { upsert: true }
+  book.findByIdAndUpdate(req.params.id, newBook, function(err, addedBook) {
     if(err){
-      console.log('Error adding the book');
+      console.log('Error adding the book: ' + req.body.title);
       console.log(err);
     } else {
-      console.log(addedBook._id);
+      //console.log(addedBook);
       res.json(addedBook);
     }
   })

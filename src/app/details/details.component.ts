@@ -16,11 +16,12 @@ export class DetailsComponent implements OnInit {
   bookForm: FormGroup;
   editMode = false;
 
-  constructor(private _bookService: BookService, private fb: FormBuilder, private router:ActivatedRoute) {
+  constructor(private _bookService: BookService, private fb: FormBuilder, private router:ActivatedRoute, private reroute: Router) {
 
   }
 
   ngOnInit() {
+
     this.router.params.subscribe((params) => {
       let id = params['id'];
       this._bookService.getBook(id)
@@ -46,11 +47,9 @@ export class DetailsComponent implements OnInit {
   updateBook(book: Book){
     this._bookService.updateBook(book)
     .subscribe(newBook => {
-      console.log(this.book);
+      this.book = newBook;
+      console.log(newBook);
       this.editMode=false;
-      //this.books.push(newBook);
-      //this.router.navigateByUrl('/');
     })
   }
-
 }
