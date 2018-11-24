@@ -47,10 +47,10 @@ export class DetailsComponent implements OnInit {
   updateBook(book: Book){
     this._bookService.updateBook(book)
     .subscribe(newBook => {
-      book = newBook;
-      console.log(book);
+      //book = newBook;
+      //console.log(book);
       this.editMode=false;
-      //this.reroute.navigateByUrl('/');
+      this.reroute.navigateByUrl('/');
     })
   }
 }
