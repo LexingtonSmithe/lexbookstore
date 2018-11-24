@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from '../book.service';
 import { Book } from '../book';
+import { routerTransition } from '../animations';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  animations: [routerTransition],
+  host: {'[@routerTransition]': ''}
 })
 export class HomeComponent implements OnInit {
 

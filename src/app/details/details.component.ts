@@ -3,12 +3,15 @@ import { BookService } from '../book.service';
 import { Book } from '../book';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { routerTransition } from '../animations';
 
 
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
-  styleUrls: ['./details.component.scss']
+  styleUrls: ['./details.component.scss'],
+  animations: [routerTransition],
+  host: {'[@routerTransition]': ''}
 })
 export class DetailsComponent implements OnInit {
 

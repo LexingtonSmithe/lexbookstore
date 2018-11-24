@@ -24,7 +24,7 @@ router.get('/books', function(req, res){
             console.log('Error getting the Books');
           } else {
             res.json(books);
-            console.log(books);
+            //console.log(books);
           }
   });
 });
@@ -37,7 +37,7 @@ router.get('/details/:id', function(req, res){
             console.log('Error getting the Book');
           } else {
             res.json(book);
-            console.log(book);
+            //console.log(book);
           }
   });
 });
