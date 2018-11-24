@@ -1,10 +1,10 @@
 
 $bg: #2A3136;
 $text-color: #88949D;
-$accent-color: #00E4AC;
+$accent-colour: #fbf236;
 
 label {
-    color:$accent-color;
+    color:$accent-colour;
     font-size:1.5em;
 }
 
@@ -21,7 +21,7 @@ textarea {
 }
 
 .filled {
-    background:$accent-color;
+    background:$accent-colour;
     color:$bg;
     float:left;
     border-radius:0;

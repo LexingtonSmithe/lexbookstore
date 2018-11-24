@@ -7,20 +7,12 @@
         <input *ngIf="editMode" type="text" name="title" [formControl]="bookForm.controls['title']">
         <h2 *ngIf="!editMode">{{ book.author }}</h2>
         <input *ngIf="editMode" type="text" name="author" [formControl]="bookForm.controls['author']">
+        <input *ngIf="editMode" type="text" name="url" [formControl]="bookForm.controls['url']">
       </div>
       <div class="columns small-12 medium-2">
         <a href="{{ book.url }}" id="external-btn">
-          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-              viewBox="0 0 96.8 96.8" style="enable-background:new 0 0 96.8 96.8;" xml:space="preserve">
-            <style type="text/css">
-              .st0{fill:#00E4AC;}
-              .st1{fill:#2A3136;}
-            </style>
-            <circle class="st0" cx="48.4" cy="48.4" r="48.4"/>
-            <polygon class="st1" points="60.4,25.6 44.2,25.6 33.1,36.2 51.4,36.2 21.7,70.8 36,70.8 60.4,42.3 60.4,63.3 71,50.9 71,36.2
-              71,25.6 "/>
-            </svg>
-          </a>
+          <img src="/assets/images/wiki.png" id="wiki">
+        </a>
       </div>
     </div>
     <div class="row columns">
@@ -31,7 +23,7 @@
       <p *ngIf="!editMode">{{ book.description }} <p>
       <textarea *ngIf="editMode" name="description" id="description" [formControl]="bookForm.controls['description']">{{ book.description }}</textarea>
     </div>
-    <input *ngIf="editMode" type="submit" class="cta-btn filled" value="Submit" [disabled]="!bookForm.valid">
+    <input *ngIf="editMode" type="submit" class="cta-btn filled btn3" value="Submit" [disabled]="!bookForm.valid">
   </form>
-    <button *ngIf="!editMode" type="edit" class="cta-btn filled" (click)="editMode=true">Edit</button>
+    <button *ngIf="!editMode" type="edit" class="cta-btn filled btn3" (click)="editMode=true">Edit</button>
 </div>

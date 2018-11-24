@@ -37,7 +37,7 @@ export class DetailsComponent implements OnInit {
             'url': [this.book.url, Validators.required],
             'genre': [this.book.genre, Validators.required],
             'yearPublished': [this.book.yearPublished, Validators.required],
-            'description': [this.book.description, Validators.compose([Validators.required, Validators.minLength(30), Validators.maxLength(500)])],
+            'description': [this.book.description, Validators.compose([Validators.required, Validators.minLength(30), Validators.maxLength(1000)])],
           })
         }
       );
@@ -47,10 +47,10 @@ export class DetailsComponent implements OnInit {
   updateBook(book: Book){
     this._bookService.updateBook(book)
     .subscribe(newBook => {
-      //this.book = newBook;
-      //console.log(newBook);
+      book = newBook;
+      console.log(book);
       this.editMode=false;
-      this.reroute.navigateByUrl('/');
+      //this.reroute.navigateByUrl('/');
     })
   }
 }

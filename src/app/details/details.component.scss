@@ -4,17 +4,27 @@ p {
   font-size:1.5em;
 }
 
+#wiki {
+  width:300px;
+  padding:30px;
+  position: right;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
 a#back {
-    background: url('/assets/images/back.svg') no-repeat;
-    width:120px;
+    background: url('/assets/images/back.png') no-repeat;
+    width:140px;
+    height:35;
     font-size:1.5em;
     display:block;
     color:#2A3136;
     font-weight:bold;
     text-transform: uppercase;
-    text-indent: 28px;
+    text-align: center;
     padding-top:1px;
-    margin-bottom: 5px;
+    margin-bottom: 40px;
 }
 
 input[type='text'],textarea {
@@ -27,4 +37,15 @@ input[type='text'],textarea {
 
 textarea {
     min-height:140px;
+}
+
+.btn3 {
+  float: none;
+  margin: 52px;
+  position: absolute;
+  height:80px;
+  font-size:1.4em;
+  text-align: center;
+  line-height: 3;
+  width: 140px;
 }
