@@ -1,5 +1,8 @@
+
+<app-search></app-search>
+
 <div class="row">
-  <div class="columns small-12 medium-6 large-3 books" *ngFor="let book of books">
+  <div class="columns small-12 medium-6 large-3 books" *ngFor="let book of books | bookFilter: searchKeyword">
     <div class="book-container">
       <div class="row">
         <div class="columns small-12 large-10">
