@@ -3,6 +3,7 @@
     padding: 20px;
     margin-bottom:30px;
     height: 100%;
+    min-height:150;
     max-height: 200px;
     position: relative;
 }
@@ -18,7 +19,7 @@
 }
 
 .book-container p {
-  margin:30px 0 50px 0;
+  margin-top:30px;
   font-size:1.2em;
 }
 
@@ -30,6 +31,7 @@
   float: none;
   position: absolute;
   bottom: 23px;
+  right: 23px;
 }
 
 .external svg {

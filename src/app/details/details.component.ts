@@ -13,11 +13,13 @@ import { routerTransition } from '../animations';
   animations: [routerTransition],
   host: {'[@routerTransition]': ''}
 })
+
 export class DetailsComponent implements OnInit {
 
   book: Book;
   bookForm: FormGroup;
   editMode = false;
+  showDelete = true;
 
   constructor(private _bookService: BookService, private fb: FormBuilder, private router:ActivatedRoute, private reroute: Router) {
 
@@ -36,24 +38,34 @@ export class DetailsComponent implements OnInit {
           this.bookForm = this.fb.group({
             '_id': [this.book._id],
             'title': [this.book.title, Validators.compose([Validators.required, Validators.maxLength(60)])],
-            'author': [this.book.author, Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(100)])],
+            'author': [this.book.author, Validators.compose([Validators.required, Validators.maxLength(100)])],
             'url': [this.book.url, Validators.required],
             'genre': [this.book.genre, Validators.required],
             'yearPublished': [this.book.yearPublished, Validators.required],
             'description': [this.book.description, Validators.compose([Validators.required, Validators.minLength(30), Validators.maxLength(1000)])],
           })
         }
-      );
+      )
     })
-  }
+  };
 
   updateBook(book: Book){
     this._bookService.updateBook(book)
     .subscribe(newBook => {
-      //book = newBook;
-      //console.log(book);
       this.editMode=false;
       this.reroute.navigateByUrl('/');
     })
   }
+
+  deleteBook(){
+    this.router.params.subscribe((params) => {
+      let id = params['id']
+      this._bookService.deleteBook(id)
+        .subscribe(response => {
+      })
+      this.showDelete = false
+      this.reroute.navigateByUrl('/')
+    })
+  }
+
 }

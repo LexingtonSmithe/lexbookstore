@@ -25,5 +25,10 @@
     </div>
     <input *ngIf="editMode" type="submit" class="cta-btn filled btn3" value="Submit" [disabled]="!bookForm.valid">
   </form>
-    <button *ngIf="!editMode" type="edit" class="cta-btn filled btn3" (click)="editMode=true">Edit</button>
+    <div class="btn-group">
+      <button *ngIf="!editMode" type="edit" class="cta-btn filled btn3" (click)="editMode=true">Edit</button>
+      <button *ngIf="showDelete" type="delete" class="cta-btn filled btn3" (click)="showDelete=false">Delete</button>
+      <button *ngIf="!showDelete" type="cancel" class="cta-btn filled btn3" (click)="showDelete=true">Cancel</button>
+      <button *ngIf="!showDelete" type="confirm" class="cta-btn filled btn3" (click)="deleteBook()">Confirm</button>
+    </div>
 </div>

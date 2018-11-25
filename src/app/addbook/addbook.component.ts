@@ -22,7 +22,7 @@ export class AddBookComponent implements OnInit {
 
     this.bookForm = fb.group({
       'title': [null, Validators.compose([Validators.required, Validators.maxLength(60)])],
-      'author': [null, Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(100)])],
+      'author': [null, Validators.compose([Validators.required, Validators.maxLength(100)])],
       'url': [null, Validators.required],
       'genre': [null, Validators.required],
       'yearPublished': [null, Validators.required],

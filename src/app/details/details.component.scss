@@ -13,6 +13,14 @@ p {
   justify-content: center
 }
 
+#delete {
+  width:50px;
+}
+
+#cancel {
+  width:50px;
+}
+
 a#back {
     background: url('/assets/images/back.png') no-repeat;
     width:140px;
@@ -40,12 +48,25 @@ textarea {
 }
 
 .btn3 {
-  float: none;
-  margin: 52px;
-  position: absolute;
+  float: left;
+  margin-left: 52px;
+  margin-top: 52px;
+  padding:10px;
+  position: relative;
   height:80px;
+  width: 80px;
   font-size:1.4em;
   text-align: center;
   line-height: 3;
   width: 140px;
+}
+
+.btn-group button {
+  display:table;
+}
+
+.btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
 }

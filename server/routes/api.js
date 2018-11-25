@@ -16,6 +16,8 @@ mongoose.connect(db, {useNewUrlParser: true}, function(err){
   }
 })
 
+//retrieve all books
+
 router.get('/books', function(req, res){
   console.log('Requesting Books');
   book.find({})
@@ -29,6 +31,8 @@ router.get('/books', function(req, res){
   });
 });
 
+// retrieve a book
+
 router.get('/details/:id', function(req, res){
   console.log('Requesting Book');
   book.findById(req.params.id)
@@ -41,6 +45,8 @@ router.get('/details/:id', function(req, res){
           }
   });
 });
+
+// add a book record
 
 router.post('/books', function(req, res){
   console.log('Adding a Book: ' + req.body.title);
@@ -59,6 +65,8 @@ router.post('/books', function(req, res){
     }
   })
 });
+
+// update a book record
 
 router.post('/books/:id', function(req, res){
   console.log('Updating a Book entry: ' + req.body.title);
@@ -80,6 +88,19 @@ router.post('/books/:id', function(req, res){
     } else {
       //console.log(addedBook);
       res.json(addedBook);
+    }
+  })
+});
+
+// delete a book
+
+router.delete('/books/:id', function(req, res){
+  console.log('Deleting Book: ' + req.params.id);
+  book.findByIdAndRemove(req.params.id, function(err, deletedBook){
+    if(err){
+      console.log('Error Deleting Book');
+    } else {
+      console.log(deletedBook);
     }
   })
 });

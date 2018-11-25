@@ -1,6 +1,6 @@
 
 $bg: #2A3136;
-$text-color: #88949D;
+$text-colour: #88949D;
 $accent-colour: #fbf236;
 
 label {
@@ -13,7 +13,12 @@ input[type='text'],textarea {
     border: 1px solid #617879;
     width: 100%;
     padding:22px 15px;
-    color:$text-color;
+    color:$text-colour;
+}
+
+h1 {
+  font-weight: bold;
+  color: $text-colour;
 }
 
 textarea {

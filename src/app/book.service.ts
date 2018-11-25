@@ -14,8 +14,14 @@ export class BookService {
     return this._http.get("/api/books")
       .pipe(map(result => this.result = result.json()));
   }
+
   getBook(id) {
     return this._http.get("/api/details/" + id)
+      .pipe(map(result => this.result = result.json()));
+  }
+
+  deleteBook(id){
+    return this._http.delete("/api/books/" + id)
       .pipe(map(result => this.result = result.json()));
   }
 
