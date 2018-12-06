@@ -13,6 +13,13 @@ import { routerTransition } from '../animations';
 export class HomeComponent implements OnInit {
 
   books: Array<Book>;
+  val;
+
+  itemSelected(e){
+    console.log(e)
+    this.val = e;
+  }
+
   constructor(private _bookService: BookService) { }
 
   ngOnInit() {

@@ -1,6 +1,8 @@
 
-<app-search></app-search>
-
+<app-search (keyPress)="itemSelected($event)">
+</app-search>
+{{val | json}}
+<p>Hello, {{val | json}}</p>
 <div class="row">
   <div class="columns small-12 medium-6 large-3 books" *ngFor="let book of books | bookFilter: searchKeyword">
     <div class="book-container">

@@ -1,8 +1,12 @@
+$bg: #2A3136;
+$text-colour: #88949D;
+$accent-colour: #fbf236;
+
 .book-container {
     background-color:#373e48;
     padding: 20px;
     margin-bottom:30px;
-    height: 180px;
+    height: 200px;
     //height: 100%;
     //min-height:150px;
     //max-height: 200px;
@@ -14,7 +18,7 @@
 }
 
 .book-title{
-  font-size:1.6em;
+  font-size:1.4em;
   font-weight: bold;
   display:block;
 }

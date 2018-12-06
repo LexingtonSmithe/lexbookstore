@@ -11,8 +11,10 @@ import { DetailsComponent } from './details/details.component';
 import { LengthPipe } from './length.pipe';
 import { AddBookComponent } from './addbook/addbook.component';
 import { BookFilterPipe } from './filter.pipe';
+import { DummyPipe } from './dummy.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchComponent } from './search/search.component';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { SearchComponent } from './search/search.component';
     LengthPipe,
     AddBookComponent,
     BookFilterPipe,
-    SearchComponent
+    SearchComponent,
+    DummyPipe
   ],
   imports: [
     BrowserModule,
